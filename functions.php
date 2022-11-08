@@ -99,6 +99,7 @@ function shoppi_setup() {
 			'flex-height' => true,
 		)
 	);
+
 }
 add_action( 'after_setup_theme', 'shoppi_setup' );
 

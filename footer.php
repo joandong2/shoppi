@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<div class="container">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'shoppi' ) ); ?>">
 				<?php
@@ -25,6 +26,7 @@
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'shoppi' ), 'shoppi', '<a href="https://joblenda.me/">John Oblenda</a>' );
 				?>
 		</div><!-- .site-info -->
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
