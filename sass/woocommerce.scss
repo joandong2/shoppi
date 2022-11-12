@@ -41,3 +41,7 @@ $woocommerce__color-info: #3d9cd2;
  * WooCommerce widgets
  */
 @import "plugins/woocommerce/widgets";
+
+.wc-block-components-sort-select__label {
+  margin-right: 0;
+}
