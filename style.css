@@ -60,7 +60,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&display=swap");
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -939,7 +939,7 @@ textarea {
 /* Custom Styles
 --------------------------------------------- */
 body {
-	font-family: "Raleway", sans-serif;
+	font-family: "Montserrat", sans-serif;
 	color: #686868;
 	font-size: 14px;
 }
@@ -958,7 +958,7 @@ a:visited {
 }
 
 a:hover {
-	color: #dc9814;
+	color: #ff0000;
 }
 
 h1.entry-title {
@@ -996,8 +996,95 @@ header .main-navigation li {
 }
 
 .jc-tabbed-products {
-	margin: 0;
+	margin: 20px 0;
 	padding: 0;
+	list-style-type: none;
+	display: flex;
+	justify-content: center;
+	gap: 1%;
+	align-items: center;
+}
+
+.jc-tabbed-products li {
+	cursor: pointer;
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 16px;
+}
+
+.jc-tabbed-products li.active {
+	color: #000;
+}
+
+#jc-tabbed-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+#jc-tabbed-content article {
+	width: 24%;
+}
+
+article.product {
+	margin-bottom: 15px;
+}
+
+article.product .woocommerce-Price-amount {
+	color: #eb5a46;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+article.product p.entry-title {
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #000;
+}
+
+article.product .product-thumbnail {
+	position: relative;
+}
+
+article.product .product-thumbnail span.sale {
+	background: #f33939;
+	color: white;
+	padding: 5px 12px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	position: absolute;
+	top: 5%;
+	left: 5%;
+}
+
+.loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.loader .ripple {
+	width: 2rem;
+	height: 2rem;
+	margin: 2rem;
+	border-radius: 50%;
+	border: 0.3rem solid #ff0505;
+	transform: translate(50%);
+	animation: 1s ripple ease-out infinite;
+	display: none;
+	margin: 10px 0;
+}
+
+@keyframes ripple {
+	from {
+		transform: scale(0);
+		opacity: 1;
+	}
+	to {
+		transform: scale(1);
+		opacity: 0;
+	}
 }
 
 .container {

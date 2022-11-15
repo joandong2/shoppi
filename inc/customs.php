@@ -32,11 +32,16 @@ function jc_tabbed_products_functions( ) {
     ob_start(); ?>
         <ul id="jc-tabbed-products" class="jc-tabbed-products">
             <li id="featured" class="active">Featured</li>
+			/
             <li id="top-seller">Top Sellers</li>
+			/
             <li id="new-arrivals">New Arrivals</li>
         </ul>
-
-		<div id="jc-tabbed-content"> ';
+		<div class="loader">
+			<div class="ripple"></div>
+		</div>
+		<div id="jc-tabbed-content">
+			
 			<?php
 			if($loop->have_posts()) :
 				while ( $loop->have_posts() ) : $loop->the_post(); 

@@ -6,58 +6,25 @@
  *
  * @package shoppi
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				shoppi_posted_on();
-				shoppi_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+	<?php $product = new WC_Product( get_the_ID() ); ?>
 
-	<?php shoppi_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'shoppi' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'shoppi' ),
-				'after'  => '</div>',
-			)
-		);
+	<div class="product-thumbnail">
+		<?php 
+			//shoppi_post_thumbnail( );
+			echo $product->get_image('full'); 
+			if($product->is_on_sale()) {
+				echo '<span class="sale">Sale!</span>';
+			}
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
-	<footer class="entry-footer">
-		<?php shoppi_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php 	
+		echo '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
+		echo wc_price( wc_get_price_including_tax( $product ) ); 
+	?>
+
 </article><!-- #post-<?php the_ID(); ?> -->
