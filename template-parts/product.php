@@ -23,8 +23,15 @@
 	</div>
 
 	<?php 	
-		echo '<p class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
-		echo wc_price( wc_get_price_including_tax( $product ) ); 
+		echo '<div class="product-intro">';
+			echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
+			echo '<i data-id="'. get_the_ID() .'" class="fa-solid fa-heart"></i>';
+		echo '</div>';
+		if($product->get_stock_status() == 'outofstock') {
+			echo '<span class="out-of-stock">Out Of Stock</span>';
+		} else {
+			echo wc_price( wc_get_price_including_tax( $product ) ); 
+		}
 	?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -95,13 +95,27 @@ article.product {
   .woocommerce-Price-amount {
     color: #eb5a46;
     font-weight: bold;
-    font-size: 16px;
   }
 
-  p.entry-title {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #000;
+  .product-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p.entry-title {
+      margin: 5px 0;
+      font-weight: bold;
+      color: #000;
+    }
+
+    svg {
+      font-size: 16px;
+      cursor: pointer;
+
+      &:hover {
+        color: #eb5a46;
+      }
+    }
   }
 
   .product-thumbnail {
@@ -115,9 +129,18 @@ article.product {
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
       position: absolute;
-      top: 5%;
-      left: 5%;
+      top: 3%;
+      left: 3%;
     }
+  }
+
+  span.out-of-stock {
+    background: #f33939;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
   }
 }
 

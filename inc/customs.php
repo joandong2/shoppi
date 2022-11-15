@@ -107,6 +107,35 @@ function jo_load_more() {
 	endif; 
 
 	wp_die();
-  }
-  add_action('wp_ajax_jo_load_more', 'jo_load_more');
-  add_action('wp_ajax_nopriv_jo_load_more', 'jo_load_more');
+}
+add_action('wp_ajax_jo_load_more', 'jo_load_more');
+add_action('wp_ajax_nopriv_jo_load_more', 'jo_load_more');
+
+function wishlist_ids() { 
+	if (!empty( $_COOKIE['wishlist_ids'])) {
+		return explode(',', $_COOKIE['wishlist_ids']);
+	}
+	else {
+		return array();
+	}
+}
+
+function jo_add_to_wishlist() {
+	check_ajax_referer( 'jo_nonce', 'nonce' );  // This function will die if nonce is not correct
+	$wish_id = sanitize_text_field($_POST['wish_id']);
+
+	// if (!empty($wish_id)) {
+	// 	$new_wish_id = array($wish_id);
+	// 	$wishlist_ids = array_merge($new_wish_id, wishlist_ids());
+	// 	$wishlist_ids = array_diff($wishlist_ids, array(''));
+	// 	$wishlist_ids = array_unique($wishlist_ids);
+	// 	setcookie('wishlist_ids', implode(',', $wishlist_ids) , time() + 3600 * 24 * 365, '/');
+	// 	echo count($wishlist_ids);
+	// }
+
+	echo $wish_id;
+
+	wp_die();
+}
+add_action('wp_ajax_jo_add_to_wishlist', 'jo_add_to_wishlist');
+add_action('wp_ajax_nopriv_jo_add_to_wishlist', 'jo_add_to_wishlist');

@@ -20,4 +20,22 @@ jQuery(function ($) {
         }
       });
   });
+
+  $("article.product p").on("click", function (e) {
+    e.preventDefault();
+    var wish_id = $(this).attr("data-id");
+    console.log(wish_id);
+    (data = {
+      action: "jo_add_to_wishlist", // execute the function
+      nonce: ajax_object.jo_nonce,
+      wish_id: wish_id, // used as $_POST['val'] in ajax callback
+    }),
+      $.post(ajax_object.jo_ajaxurl, data, function (res) {
+        //console.log("ajax".res);
+        // $(".product-intro svg[data-id='" + wish_id + "']").css(
+        //   "color",
+        //   "#eb5a46"
+        // );
+      });
+  });
 });
