@@ -183,3 +183,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Custom codes
+ */
+require get_template_directory() . '/inc/customs.php';
+
+
+// add_shortcode( 'wc_sorting','woocommerce_catalog_ordering', 30 );
+
+// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+// add_action( 'woo_custom_catalog_ordering', 'woocommerce_catalog_ordering', 30 );
