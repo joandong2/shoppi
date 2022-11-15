@@ -81,7 +81,8 @@ header {
 #jc-tabbed-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 1.3%;
 
   article {
     width: 24%;
