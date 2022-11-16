@@ -10,7 +10,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php $product = new WC_Product( get_the_ID() ); ?>
+	<?php 
+		$product = new WC_Product( get_the_ID() ); 
+		$active_wishlist = isset($_COOKIE['wishlist_ids']) ? in_array( get_the_id(), explode(',', $_COOKIE['wishlist_ids']) ) : null;
+		$wish_class = $active_wishlist===true ? 'active' : null;
+	?>
 
 	<div class="product-thumbnail">
 		<?php 
@@ -25,7 +29,9 @@
 	<?php 	
 		echo '<div class="product-intro">';
 			echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
-			echo '<i data-id="'. get_the_ID() .'" class="fa-solid fa-heart"></i>';
+			
+			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .'"><i class="fa-solid fa-heart"></i></a>';
+
 		echo '</div>';
 		if($product->get_stock_status() == 'outofstock') {
 			echo '<span class="out-of-stock">Out Of Stock</span>';

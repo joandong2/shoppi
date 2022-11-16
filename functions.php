@@ -146,6 +146,12 @@ function shoppi_scripts() {
 	wp_enqueue_script( 'shoppi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'fontawesome-js' , 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js', array('jquery'), _S_VERSION, true );
 
+	wp_enqueue_script( 'ajax-script', get_template_directory_uri(). '/js/custom.js', array( 'jquery' ), _S_VERSION, true);
+	wp_localize_script( 'ajax-script', 'ajax_object', array( 
+		'jo_ajaxurl' => admin_url( 'admin-ajax.php' ),
+		//'jo_nonce' => wp_create_nonce('jo_nonce')
+	));
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -190,9 +196,3 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Custom codes
  */
 require get_template_directory() . '/inc/customs.php';
-
-
-// add_shortcode( 'wc_sorting','woocommerce_catalog_ordering', 30 );
-
-// remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
-// add_action( 'woo_custom_catalog_ordering', 'woocommerce_catalog_ordering', 30 );
