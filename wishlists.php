@@ -8,6 +8,9 @@ get_header();
 
     <main>hello world</main>
     <?php 
+        echo in_array(44, explode( ',', $_COOKIE['wishlist_ids'] ));
+
+
         if ( isset( $_COOKIE['wishlist_ids'] ) ) {
             $args = array(  
 				'post_type' => 'product',

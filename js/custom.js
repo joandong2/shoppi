@@ -8,8 +8,10 @@ jQuery(function ($) {
       wish_id: wish_id, // used as $_POST['val'] in ajax callback
     }),
       $.post(ajax_object.jo_ajaxurl, data, function (res) {
-        if (res === "success") {
+        if (res === "added") {
           $(".product-intro a#" + wish_id).addClass("active");
+        } else {
+          $(".product-intro a#" + wish_id).removeClass("active");
         }
       });
   });

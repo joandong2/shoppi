@@ -58,7 +58,7 @@
 				?>
 			</nav><!-- #site-navigation -->
 			<div id="site-navigation" class="main-navigation">
-				<li><a href="/wishlist">Wishlists</a></li>
+				<li><a href="wishlist">Wishlists</a></li>
 			</div><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->

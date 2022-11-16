@@ -106,14 +106,22 @@ function jo_add_to_wishlist() {
 	$wish_id = sanitize_text_field($_POST['wish_id']);
 
 	if (!empty($wish_id)) {
-		$new_wish_id = array($wish_id);
-		$wishlist_ids = array_merge($new_wish_id, (isset($_COOKIE['wishlist_ids']) ? explode(',', $_COOKIE['wishlist_ids']) : array()));
-		$wishlist_ids = array_diff($wishlist_ids, array(''));
-		$wishlist_ids = array_unique($wishlist_ids);
-		setcookie('wishlist_ids', implode(',', $wishlist_ids) , time() + 3600 * 24 * 365, '/');
+		if(in_array($wish_id, explode( ',', $_COOKIE['wishlist_ids'] ))) {
+			$new_arr = explode( ',', $_COOKIE['wishlist_ids'] );
+            if (($delete_post_id = array_search($wish_id, $new_arr)) !== false) {
+                unset($new_arr[$delete_post_id]);
+            }
+            setcookie('wishlist_ids', implode(',', $new_arr) , time() + 3600 * 24 * 30, '/');
+			echo 'removed';
+		} else {
+			$new_wish_id = array($wish_id);
+			$wishlist_ids = array_merge($new_wish_id, (isset($_COOKIE['wishlist_ids']) ? explode( ',', $_COOKIE['wishlist_ids'] ) : array()));
+			$wishlist_ids = array_diff($wishlist_ids, array(''));
+			$wishlist_ids = array_unique($wishlist_ids);
+			setcookie('wishlist_ids', implode(',', $wishlist_ids) , time() + 3600 * 24 * 365, '/');
+			echo 'added';
+		}
 	}
-
-	echo 'success';
 	wp_die();
 }
 add_action('wp_ajax_jo_add_to_wishlist', 'jo_add_to_wishlist');
