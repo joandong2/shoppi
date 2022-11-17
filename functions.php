@@ -100,6 +100,8 @@ function shoppi_setup() {
 		)
 	);
 
+	add_theme_support ('align-wide');
+
 }
 add_action( 'after_setup_theme', 'shoppi_setup' );
 
@@ -132,6 +134,67 @@ function shoppi_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 1', 'shoppi' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'shoppi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 2', 'shoppi' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'shoppi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 3', 'shoppi' ),
+			'id'            => 'footer-3',
+			'description'   => esc_html__( 'Add widgets here.', 'shoppi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 4', 'shoppi' ),
+			'id'            => 'footer-4',
+			'description'   => esc_html__( 'Add widgets here.', 'shoppi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer 5', 'shoppi' ),
+			'id'            => 'footer-5',
+			'description'   => esc_html__( 'Add widgets here.', 'shoppi' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	
 }
 add_action( 'widgets_init', 'shoppi_widgets_init' );
 
@@ -139,12 +202,16 @@ add_action( 'widgets_init', 'shoppi_widgets_init' );
  * Enqueue scripts and styles.
  */
 function shoppi_scripts() {
+
+	wp_enqueue_style( 'fa-style', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' );
+	wp_enqueue_style( 'bootstrap-style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' );
 	wp_enqueue_style( 'shoppi-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'shoppi-style', 'rtl', 'replace' );
-	wp_enqueue_style( 'fa-style', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' );
 
-	wp_enqueue_script( 'shoppi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'bootstrap-js' , 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'fontawesome-js' , 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js', array('jquery'), _S_VERSION, true );
+	wp_enqueue_script( 'shoppi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
 
 	wp_enqueue_script( 'ajax-script', get_template_directory_uri(). '/js/custom.js', array( 'jquery' ), _S_VERSION, true);
 	wp_localize_script( 'ajax-script', 'ajax_object', array( 
