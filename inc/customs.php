@@ -126,3 +126,62 @@ function jo_add_to_wishlist() {
 }
 add_action('wp_ajax_jo_add_to_wishlist', 'jo_add_to_wishlist');
 add_action('wp_ajax_nopriv_jo_add_to_wishlist', 'jo_add_to_wishlist');
+
+
+add_action( 'add_meta_boxes', 'create_custom_product_meta_box' );
+function create_custom_product_meta_box()
+{
+	add_meta_box(
+		'hover_image',
+		__( 'Hover Product Image <em>(optional)</em>', 'shoppi' ),
+		'add_custom_content_meta_box',
+		'product',
+		'side',
+		'default'
+	);
+}
+
+
+
+function add_custom_content_meta_box( $post ){
+	$hover_image = get_post_meta($post->ID, 'hover_image', true) ? get_post_meta($post->ID, 'hover_image', true) : '';
+    echo multi_media_uploader_field( 'hover_image', $hover_image ); 
+}
+
+function multi_media_uploader_field($name, $value = '') {
+    $image = '">Set Hover Image';
+    $image_str = '';
+    $display = 'none';
+
+    if (!empty($value)) {
+		if ($image_attributes = wp_get_attachment_image_src($value, '$image_size')) {
+			$image_str .= '<li data-attechment-id=' . $value . '><img src="' . $image_attributes[0] . '" /></li>';
+		}
+    }
+
+    if($image_str){
+        $display = 'inline-block';
+    }
+
+    return '
+		<div class="multi-upload-medias">
+			<ul>' . $image_str . '</ul>
+			<a href="#" class="wc_multi_upload_image_button' . $image . '</a>
+				<input type="hidden" class="attechments-ids ' . $name . '" name="' . $name . '" id="' . $name . '" value="' . esc_attr($value) . '" />
+			<a href="#" class="wc_multi_remove_image_button" style="margin-left:10px;display:inline-block;display:' . $display . '">Remove media</a>
+		</div>';
+}
+
+// Save Meta Box values.
+add_action( 'save_post', 'wc_meta_box_save' );
+
+function wc_meta_box_save( $post_id ) {
+    if( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return; 
+    }
+    
+    if( isset( $_POST['hover_image'] ) ){
+        update_post_meta( $post_id, 'hover_image', $_POST['hover_image'] );
+    }
+}?>
+

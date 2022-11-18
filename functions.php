@@ -250,6 +250,14 @@ function shoppi_scripts() {
 add_action( 'wp_enqueue_scripts', 'shoppi_scripts' );
 
 /**
+ * Enqueue admin scripts and styles.
+ */
+function admin_shoppi_scripts() {
+	wp_enqueue_script( 'admin-custom' , get_template_directory_uri(). '/js/admin-custom.js', array('jquery'), _S_VERSION, true );
+}
+add_action( 'admin_enqueue_scripts', 'admin_shoppi_scripts' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
