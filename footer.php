@@ -41,21 +41,24 @@
 				</div>
 			</div>
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'shoppi' ) ); ?>">
-					<?php
-					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'shoppi' ), 'WordPress' );
-					?>
-				</a>
-				<span class="sep"> | </span>
-					<?php
-					/* translators: 1: Theme name, 2: Theme author. */
-					printf( esc_html__( 'Theme: %1$s by %2$s.', 'shoppi' ), 'shoppi', '<a href="https://joblenda.me/">John Oblenda</a>' );
-					?>
+				<div>
+					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'shoppi' ) ); ?>">
+						<?php
+						/* translators: %s: CMS name, i.e. WordPress. */
+						printf( esc_html__( 'Proudly powered by %s', 'shoppi' ), 'WordPress' );
+						?>
+					</a>
+					<span class="sep"> | </span>
+						<?php
+						/* translators: 1: Theme name, 2: Theme author. */
+						printf( esc_html__( 'Theme: %1$s by %2$s.', 'shoppi' ), 'shoppi', '<a href="https://joblenda.me/">John Oblenda</a>' );
+						?>
+				</div>
+				<div>
+					<img src="http://localhost/shoppi/wp-content/uploads/2022/11/payment.webp" alt="">
+				</div>
 			</div><!-- .site-info -->
-			<div>
-				<img src="http://localhost/shoppi/wp-content/uploads/2022/11/payment-300x17-1.webp" alt="">
-			</div>
+			
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

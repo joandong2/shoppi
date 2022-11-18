@@ -107,7 +107,7 @@ article.product {
   margin-bottom: 15px;
 
   .woocommerce-Price-amount {
-    color: #eb5a46;
+    color: $hover-color;
     font-weight: bold;
   }
 
@@ -123,7 +123,7 @@ article.product {
     }
 
     a.active svg {
-      color: #eb5a46;
+      color: $hover-color;
     }
 
     svg {
@@ -131,7 +131,7 @@ article.product {
       cursor: pointer;
 
       &:hover {
-        color: #eb5a46;
+        color: $hover-color;
       }
     }
   }
@@ -140,7 +140,7 @@ article.product {
     position: relative;
 
     span.sale {
-      background: #f33939;
+      background: $hover-color;
       color: white;
       padding: 5px 12px;
       border-radius: 5px;
@@ -153,7 +153,7 @@ article.product {
   }
 
   span.out-of-stock {
-    background: #f33939;
+    background: $hover-color;
     color: white;
     padding: 5px 12px;
     border-radius: 5px;
@@ -172,7 +172,7 @@ article.product {
     height: 2rem;
     margin: 2rem;
     border-radius: 50%;
-    border: 0.3rem solid #ff0505;
+    border: 0.3rem solid $hover-color;
     transform: translate(50%);
     animation: 1s ripple ease-out infinite;
     display: none;
@@ -205,6 +205,9 @@ article.product {
   padding-top: 40px;
   padding-bottom: 20px;
   color: #fff;
+  background: url("http://localhost/shoppi/wp-content/uploads/2022/11/black-and-white-g10ddc5ab3_1920.jpg")
+    no-repeat center center;
+  background-size: cover;
 }
 
 .top-footer {
@@ -313,6 +316,8 @@ footer {
     border-top: 1px solid #dbe1e6;
     padding-top: 25px;
     padding-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
   }
 }
 
