@@ -946,7 +946,7 @@ body {
 }
 
 p {
-	margin-bottom: revert;
+	margin-bottom: 5px;
 }
 
 a {
@@ -982,7 +982,7 @@ header .header-top {
 
 header .site-title a {
 	text-decoration: none;
-	color: #000;
+	color: #262a2c;
 	text-transform: capitalize;
 	font-size: 28px;
 	font-weight: bold;
@@ -990,6 +990,7 @@ header .site-title a {
 }
 
 header .site-branding {
+	padding: 20px 0;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -1001,10 +1002,6 @@ header .main-navigation {
 
 header .main-navigation li {
 	margin-right: 10px;
-}
-
-.slider {
-	margin-bottom: 80px;
 }
 
 .jc-tabbed-products {
@@ -1048,16 +1045,29 @@ article.product .woocommerce-Price-amount {
 	font-weight: bold;
 }
 
+article.product .product-tags {
+	margin-top: 10px;
+}
+
+article.product .product-tags a {
+	background: #262a2c;
+	color: white;
+	padding: 1px 5px;
+	font-size: 13px;
+}
+
 article.product .product-intro {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
 article.product .product-intro p.entry-title {
-	margin: 5px 0;
-	font-weight: bold;
-	color: #000;
+	color: #262a2c;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 600;
+	font-style: normal;
+	letter-spacing: 0.4px;
 }
 
 article.product .product-intro a.active svg {
@@ -1077,19 +1087,15 @@ article.product .product-thumbnail {
 	position: relative;
 }
 
-article.product .product-thumbnail span.sale {
-	background: #eb5a46;
-	color: white;
-	padding: 5px 12px;
-	border-radius: 5px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+article.product .product-thumbnail .product-status {
 	position: absolute;
 	top: 3%;
 	left: 3%;
+	display: flex;
 }
 
-article.product span.out-of-stock {
+article.product .product-thumbnail span.sale,
+article.product .product-thumbnail span.out-of-stock {
 	background: #eb5a46;
 	color: white;
 	padding: 5px 12px;
@@ -1144,15 +1150,24 @@ article.product span.out-of-stock {
 	background-size: cover;
 }
 
-.top-footer {
+.hero-boxes svg {
+	font-size: 48px;
+}
+
+.hero-boxes .is-layout-flow {
+	align-self: center;
+}
+
+.footer-callback {
 	background: #262a2c;
 	padding-top: 40px;
 	padding-bottom: 20px;
 	color: #fff;
+	margin-bottom: 50px;
 }
 
 .wp-block-social-links li {
-	margin-right: 15px;
+	margin-right: 10px;
 }
 
 #wpforms-141 {
@@ -1190,13 +1205,9 @@ article.product span.out-of-stock {
 }
 
 #wpforms-141 #wpforms-form-141 .wpforms-submit-container {
-	margin-top: -9.7%;
-	margin-right: 21%;
+	margin-top: -9.6%;
+	margin-right: 20.5%;
 	width: 110px;
-}
-
-footer {
-	padding-bottom: 31px;
 }
 
 footer .footer-widgets svg {
@@ -1244,6 +1255,10 @@ footer .footer-widgets .widget-title {
 
 footer .footer-widgets p {
 	margin-bottom: 5px;
+}
+
+footer .footer-widgets .footer-widget-5 svg {
+	font-size: 34px;
 }
 
 footer .site-info {

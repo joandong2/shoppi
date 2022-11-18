@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&display=swap");
 
 $hover-color: #eb5a46;
+$gray: #262a2c;
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -10,7 +11,7 @@ body {
 }
 
 p {
-  margin-bottom: revert;
+  margin-bottom: 5px;
 }
 
 a {
@@ -45,7 +46,7 @@ header {
 
   .site-title a {
     text-decoration: none;
-    color: #000;
+    color: $gray;
     text-transform: capitalize;
     font-size: 28px;
     font-weight: bold;
@@ -53,6 +54,7 @@ header {
   }
 
   .site-branding {
+    padding: 20px 0;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -67,9 +69,9 @@ header {
   }
 }
 
-.slider {
-  margin-bottom: 80px;
-}
+// .slider {
+//   margin-bottom: 80px;
+// }
 
 .jc-tabbed-products {
   margin: 20px 0;
@@ -111,15 +113,27 @@ article.product {
     font-weight: bold;
   }
 
+  .product-tags {
+    margin-top: 10px;
+
+    a {
+      background: #262a2c;
+      color: white;
+      padding: 1px 5px;
+      font-size: 13px;
+    }
+  }
   .product-intro {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     p.entry-title {
-      margin: 5px 0;
-      font-weight: bold;
-      color: #000;
+      color: #262a2c;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 600;
+      font-style: normal;
+      letter-spacing: 0.4px;
     }
 
     a.active svg {
@@ -139,26 +153,22 @@ article.product {
   .product-thumbnail {
     position: relative;
 
-    span.sale {
+    .product-status {
+      position: absolute;
+      top: 3%;
+      left: 3%;
+      display: flex;
+    }
+
+    span.sale,
+    span.out-of-stock {
       background: $hover-color;
       color: white;
       padding: 5px 12px;
       border-radius: 5px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px;
-      position: absolute;
-      top: 3%;
-      left: 3%;
     }
-  }
-
-  span.out-of-stock {
-    background: $hover-color;
-    color: white;
-    padding: 5px 12px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
   }
 }
 
@@ -210,15 +220,26 @@ article.product {
   background-size: cover;
 }
 
-.top-footer {
+.hero-boxes {
+  svg {
+    font-size: 48px;
+  }
+
+  .is-layout-flow {
+    align-self: center;
+  }
+}
+
+.footer-callback {
   background: #262a2c;
   padding-top: 40px;
   padding-bottom: 20px;
   color: #fff;
+  margin-bottom: 50px;
 }
 
 .wp-block-social-links li {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 #wpforms-141 {
@@ -253,16 +274,14 @@ article.product {
     }
 
     .wpforms-submit-container {
-      margin-top: -9.7%;
-      margin-right: 21%;
+      margin-top: -9.6%;
+      margin-right: 20.5%;
       width: 110px;
     }
   }
 }
 
 footer {
-  padding-bottom: 31px;
-
   .footer-widgets {
     svg {
       color: $hover-color;
@@ -308,6 +327,10 @@ footer {
 
     p {
       margin-bottom: 5px;
+    }
+
+    .footer-widget-5 svg {
+      font-size: 34px;
     }
   }
 

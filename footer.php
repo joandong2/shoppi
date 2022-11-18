@@ -12,6 +12,22 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+		<div class="footer-callback">
+			<div class="container">
+				<div class="row">
+					<div class="social-icons col-sm-6">
+						<?php if ( is_active_sidebar('social-icons') ) { ?>
+							<?php dynamic_sidebar('social-icons'); ?>
+						<?php } ?>
+					</div>
+					<div class="footer-newsletter col-sm-6">
+						<?php if ( is_active_sidebar('foot-newsletter') ) { ?>
+							<?php dynamic_sidebar('foot-newsletter'); ?>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 			<div class="footer-widgets row">
 				<div class="footer-widget col-sm-3">
@@ -34,7 +50,7 @@
 						<?php dynamic_sidebar('footer-4'); ?>
 					<?php } ?>
 				</div>
-				<div class="footer-widget col-sm-3">
+				<div class="footer-widget footer-widget-5 col-sm-3">
 					<?php if ( is_active_sidebar('footer-5') ) { ?>
 						<?php dynamic_sidebar('footer-5'); ?>
 					<?php } ?>
