@@ -101,7 +101,6 @@ function jo_load_more() {
 add_action('wp_ajax_jo_load_more', 'jo_load_more');
 add_action('wp_ajax_nopriv_jo_load_more', 'jo_load_more');
 
-
 function jo_add_to_wishlist() {
 	$wish_id = sanitize_text_field($_POST['wish_id']);
 

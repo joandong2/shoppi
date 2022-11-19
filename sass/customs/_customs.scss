@@ -19,9 +19,9 @@ a {
   text-decoration: none;
   outline: 0 !important;
 
-  &:visited {
-    color: #686868;
-  }
+  // &:visited {
+  //   color: #686868;
+  // }
 
   &:hover {
     color: $hover-color;
@@ -137,8 +137,15 @@ article.product {
       letter-spacing: 0.4px;
     }
 
-    a.active svg {
-      color: $hover-color;
+    a {
+      &.active svg {
+        color: $hover-color;
+      }
+
+      &:visited,
+      &:active {
+        color: unset;
+      }
     }
 
     svg {
@@ -156,6 +163,9 @@ article.product {
 
     .product-image {
       cursor: pointer;
+      max-height: 449px;
+      overflow: hidden;
+      transition: opacity 0.4s ease;
     }
 
     .hover-image {

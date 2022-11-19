@@ -8,10 +8,14 @@ jQuery(function ($) {
       wish_id: wish_id, // used as $_POST['val'] in ajax callback
     }),
       $.post(ajax_object.jo_ajaxurl, data, function (res) {
-        if (res === "added") {
-          $(".product-intro a#" + wish_id).addClass("active");
-        } else {
+        // console.log(wish_id);
+        // console.log($.trim(res));
+        if ($.trim(res) === "removed") {
+          console.log("remove");
           $(".product-intro a#" + wish_id).removeClass("active");
+        } else {
+          console.log("add");
+          $(".product-intro a#" + wish_id).addClass("active");
         }
       });
   });
@@ -39,7 +43,7 @@ jQuery(function ($) {
 
   $(".product-thumbnail")
     .mouseover(function () {
-      $(this).attr("src", $(this).data("hover"));
+      $(this).attr("src", $(this).data("hover")).fadeIn();
     })
     .mouseout(function () {
       $(this).attr("src", $(this).data("src"));

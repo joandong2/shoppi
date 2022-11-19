@@ -955,10 +955,6 @@ a {
 	outline: 0 !important;
 }
 
-a:visited {
-	color: #686868;
-}
-
 a:hover {
 	color: #eb5a46;
 }
@@ -1075,6 +1071,10 @@ article.product .product-intro a.active svg {
 	color: #eb5a46;
 }
 
+article.product .product-intro a:visited, article.product .product-intro a:active {
+	color: unset;
+}
+
 article.product .product-intro svg {
 	font-size: 16px;
 	cursor: pointer;
@@ -1090,6 +1090,9 @@ article.product .product-thumbnails {
 
 article.product .product-thumbnails .product-image {
 	cursor: pointer;
+	max-height: 449px;
+	overflow: hidden;
+	transition: opacity 0.4s ease;
 }
 
 article.product .product-thumbnails .hover-image {
