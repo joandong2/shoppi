@@ -141,21 +141,18 @@ function create_custom_product_meta_box()
 	);
 }
 
-
-
 function add_custom_content_meta_box( $post ){
 	$hover_image = get_post_meta($post->ID, 'hover_image', true) ? get_post_meta($post->ID, 'hover_image', true) : '';
     echo multi_media_uploader_field( 'hover_image', $hover_image ); 
 }
 
 function multi_media_uploader_field($name, $value = '') {
-    $image = '">Set Hover Image';
     $image_str = '';
     $display = 'none';
 
     if (!empty($value)) {
 		if ($image_attributes = wp_get_attachment_image_src($value, '$image_size')) {
-			$image_str .= '<li data-attechment-id=' . $value . '><img src="' . $image_attributes[0] . '" /></li>';
+			$image_str .= '<li data-attechment-id=' . $value . '><img style="max-width:260px;max-height:380px;" src="' . $image_attributes[0] . '" /></li>';
 		}
     }
 
@@ -166,8 +163,8 @@ function multi_media_uploader_field($name, $value = '') {
     return '
 		<div class="multi-upload-medias">
 			<ul>' . $image_str . '</ul>
-			<a href="#" class="wc_multi_upload_image_button' . $image . '</a>
-				<input type="hidden" class="attechments-ids ' . $name . '" name="' . $name . '" id="' . $name . '" value="' . esc_attr($value) . '" />
+			<a href="#" class="wc_multi_upload_image_button">Set Hover Image</a>
+			<input type="hidden" class="attechments-ids ' . $name . '" name="' . $name . '" id="' . $name . '" value="' . esc_attr($value) . '" />
 			<a href="#" class="wc_multi_remove_image_button" style="margin-left:10px;display:inline-block;display:' . $display . '">Remove media</a>
 		</div>';
 }

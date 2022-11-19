@@ -18,8 +18,16 @@
 
 	<div class="product-thumbnail">
 		<?php 
+			$hover_image = get_post_meta($post->ID, 'hover_image', true);
+			$image_attributes = wp_get_attachment_image_src($hover_image, 'thumbnamil');
+				
 			//shoppi_post_thumbnail( );
-			echo $product->get_image('full'); 
+			echo '<div>';
+				echo $product->get_image('full'); 
+				if($hover_image) {
+					echo '<img src="' . $image_attributes[0] . '" />';
+				}
+			echo '</div>';
 			echo '<div class="product-status">';
 				if($product->is_on_sale()) {
 					echo '<span class="sale">Sale!</span>';

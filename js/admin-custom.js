@@ -14,7 +14,7 @@ jQuery(function ($) {
             .append(
               '<li data-attechment-id="' +
                 attachment["_single"].id +
-                '"><img src="' +
+                '"><img style="max-width:260px;max-height:380px;" src="' +
                 attachment["_single"].attributes.url +
                 '" /></li>'
             );
