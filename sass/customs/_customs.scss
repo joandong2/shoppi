@@ -151,8 +151,16 @@ article.product {
     }
   }
 
-  .product-thumbnail {
+  .product-thumbnails {
     position: relative;
+
+    .product-image {
+      cursor: pointer;
+    }
+
+    .hover-image {
+      display: none;
+    }
 
     .product-status {
       position: absolute;

@@ -16,17 +16,21 @@
 		$wish_class = $active_wishlist===true ? 'active' : null;
 	?>
 
-	<div class="product-thumbnail">
+	<div class="product-thumbnails">
 		<?php 
 			$hover_image = get_post_meta($post->ID, 'hover_image', true);
-			$image_attributes = wp_get_attachment_image_src($hover_image, 'thumbnamil');
+			$image_attributes = wp_get_attachment_image_src($hover_image, 'full');
+			$main_image = wp_get_attachment_image_src($product->image_id, 'full');
+			//$image_attributes[0]
 				
 			//shoppi_post_thumbnail( );
-			echo '<div>';
-				echo $product->get_image('full'); 
-				if($hover_image) {
-					echo '<img src="' . $image_attributes[0] . '" />';
-				}
+			echo '<div class="product-image">';
+			if($hover_image) {
+				echo '<img class="product-thumbnail" src="' . $main_image[0] . '" data-src="' . $main_image[0] . '" data-hover="' . $image_attributes[0] . '"/>';
+			} else {
+				echo '<img class="product-thumbnail" src="' . $main_image[0] . '" data-src="' . $main_image[0] . '"/>';
+			}
+				
 			echo '</div>';
 			echo '<div class="product-status">';
 				if($product->is_on_sale()) {

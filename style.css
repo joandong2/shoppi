@@ -1084,19 +1084,27 @@ article.product .product-intro svg:hover {
 	color: #eb5a46;
 }
 
-article.product .product-thumbnail {
+article.product .product-thumbnails {
 	position: relative;
 }
 
-article.product .product-thumbnail .product-status {
+article.product .product-thumbnails .product-image {
+	cursor: pointer;
+}
+
+article.product .product-thumbnails .hover-image {
+	display: none;
+}
+
+article.product .product-thumbnails .product-status {
 	position: absolute;
 	top: 3%;
 	left: 3%;
 	display: flex;
 }
 
-article.product .product-thumbnail span.sale,
-article.product .product-thumbnail span.out-of-stock {
+article.product .product-thumbnails span.sale,
+article.product .product-thumbnails span.out-of-stock {
 	background: #eb5a46;
 	color: white;
 	padding: 5px 12px;
