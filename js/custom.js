@@ -41,11 +41,17 @@ jQuery(function ($) {
       });
   });
 
-  $(".product-thumbnail")
-    .mouseover(function () {
-      $(this).attr("src", $(this).data("hover")).fadeIn();
-    })
-    .mouseout(function () {
-      $(this).attr("src", $(this).data("src"));
-    });
+  $("body").on(
+    {
+      mouseenter: function () {
+        $(this).parent().find("img.hover-thumbnail").css("opacity", "1");
+        $(this).parent().find("img.main-thumbnail").css("opacity", "0");
+      },
+      mouseleave: function () {
+        $(this).parent().find("img.hover-thumbnail").css("opacity", "0");
+        $(this).parent().find("img.main-thumbnail").css("opacity", "1");
+      },
+    },
+    ".product-thumbnails"
+  );
 });

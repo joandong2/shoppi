@@ -25,12 +25,10 @@
 				
 			//shoppi_post_thumbnail( );
 			echo '<div class="product-image">';
-			if($hover_image) {
-				echo '<img class="product-thumbnail" src="' . $main_image[0] . '" data-src="' . $main_image[0] . '" data-hover="' . $image_attributes[0] . '"/>';
-			} else {
-				echo '<img class="product-thumbnail" src="' . $main_image[0] . '" data-src="' . $main_image[0] . '"/>';
-			}
-				
+				if($image_attributes) {
+					echo '<img class="hover-thumbnail" src="' . $image_attributes[0] . '"/>';
+				}
+				echo '<img class="main-thumbnail" src="' . $main_image[0] . '"/>';
 			echo '</div>';
 			echo '<div class="product-status">';
 				if($product->is_on_sale()) {
