@@ -1199,9 +1199,9 @@ article.product .product-thumbnails {
 
 article.product .product-thumbnails .product-image {
 	cursor: pointer;
-	max-height: 449px;
-	overflow: hidden;
 	transition: opacity 0.4s ease;
+	max-height: 400px;
+	overflow: hidden;
 }
 
 article.product .product-thumbnails .product-image .main-thumbnail {
@@ -1213,10 +1213,10 @@ article.product .product-thumbnails .product-image .main-thumbnail {
 
 article.product .product-thumbnails .product-image-with-hover {
 	cursor: pointer;
-	max-height: 449px;
-	overflow: hidden;
 	transition: opacity 0.4s ease;
 	position: relative;
+	max-height: 400px;
+	overflow: hidden;
 }
 
 article.product .product-thumbnails .product-image-with-hover .hover-thumbnail {

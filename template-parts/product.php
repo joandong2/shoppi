@@ -27,14 +27,14 @@
 			if($image_attributes) {
 				echo '<div class="product-image-with-hover">';
 					echo '<a href="'. get_permalink() .'">';
-						echo '<img alt="main-image" class="hover-thumbnail" src="' . $image_attributes[0] . '"/>';
-						echo '<img alt="hover-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
+						echo '<img height="400" alt="main-image" class="hover-thumbnail" src="' . $image_attributes[0] . '"/>';
+						echo '<img height="400" alt="hover-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
 					echo '</a>';
 				echo '</div>';
 			} else {
 				echo '<div class="product-image">';
 					echo '<a href="'. get_permalink() .'">';
-						echo '<img alt="main-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
+						echo '<img height="400" alt="main-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
 					echo '</a>';
 				echo '</div>';
 			}

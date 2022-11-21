@@ -275,9 +275,9 @@ article.product {
 
     .product-image {
       cursor: pointer;
-      max-height: 449px;
-      overflow: hidden;
       transition: opacity 0.4s ease;
+      max-height: 400px;
+      overflow: hidden;
 
       .main-thumbnail {
         opacity: 1;
@@ -289,10 +289,10 @@ article.product {
 
     .product-image-with-hover {
       cursor: pointer;
-      max-height: 449px;
-      overflow: hidden;
       transition: opacity 0.4s ease;
       position: relative;
+      max-height: 400px;
+      overflow: hidden;
 
       .hover-thumbnail {
         opacity: 0;
