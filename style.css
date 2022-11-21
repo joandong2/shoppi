@@ -1066,6 +1066,49 @@ header .side-navigation ul li:last-child svg {
 	color: #262a2c;
 }
 
+.hero {
+	overflow: hidden;
+	min-height: 600px;
+	color: #fff;
+	margin-top: 0;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	background-size: cover;
+}
+
+.hero h2 {
+	padding: 0 40px;
+	font-weight: bold;
+	font-size: 40px;
+}
+
+.hero p {
+	padding: 0 40px;
+}
+
+.hero .wp-block-buttons {
+	margin: 20px 0 0 40px;
+}
+
+.hero .wp-block-buttons .wp-block-button__link {
+	border-radius: 10px;
+	padding: 5px 30px;
+	background: #eb5a46;
+}
+
+.hero.hero-1 {
+	background: url("http://localhost/shoppi/wp-content/uploads/2022/11/black-and-white-g10ddc5ab3_1920.jpg") no-repeat center center;
+}
+
+.hero.hero-2 {
+	background: url("http://localhost/shoppi/wp-content/uploads/2022/11/girl-g15794e5c3_1920.jpg") no-repeat center center;
+}
+
+.hero.hero-3 {
+	background: url("http://localhost/shoppi/wp-content/uploads/2022/11/blonde-ge432c64a4_1920.jpg") no-repeat center center;
+}
+
 .jc-tabbed-products {
 	margin: 20px 0;
 	padding: 0;
