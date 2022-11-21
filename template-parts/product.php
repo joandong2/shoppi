@@ -24,12 +24,22 @@
 			//$image_attributes[0]
 				
 			//shoppi_post_thumbnail( );
-			echo '<div class="product-image">';
-				if($image_attributes) {
-					echo '<img class="hover-thumbnail" src="' . $image_attributes[0] . '"/>';
-				}
-				echo '<img class="main-thumbnail" src="' . $main_image[0] . '"/>';
-			echo '</div>';
+			if($image_attributes) {
+				echo '<div class="product-image-with-hover">';
+					echo '<a href="'. get_permalink() .'">';
+						echo '<img alt="main-image" class="hover-thumbnail" src="' . $image_attributes[0] . '"/>';
+						echo '<img alt="hover-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
+					echo '</a>';
+				echo '</div>';
+			} else {
+				echo '<div class="product-image">';
+					echo '<a href="'. get_permalink() .'">';
+						echo '<img alt="main-image" class="main-thumbnail" src="' . $main_image[0] . '"/>';
+					echo '</a>';
+				echo '</div>';
+			}
+
+			
 			echo '<div class="product-status">';
 				if($product->is_on_sale()) {
 					echo '<span class="sale">Sale!</span>';

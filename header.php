@@ -62,8 +62,22 @@
 				);
 				?>
 			</nav><!-- #site-navigation -->
-			<div id="site-navigation" class="main-navigation">
-				<li><a href="wishlist">Wishlists</a></li>
+			<div class="side-navigation">
+				<ul>
+					<li>
+						<a href="wishlist">
+							<i class="fa-regular fa-heart"></i>
+							<span>Wishlist</span>
+						</a>
+					</li>
+					<li>|</li>
+					<li>
+						<a href="cart">
+							<i class="fa-solid fa-cart-shopping"></i>
+							<span class="cart-total">0</span>
+						</a>
+					</li>
+				</ul>
 			</div><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->

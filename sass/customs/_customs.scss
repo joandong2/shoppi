@@ -19,9 +19,10 @@ a {
   text-decoration: none;
   outline: 0 !important;
 
-  // &:visited {
-  //   color: #686868;
-  // }
+  &:visited,
+  &:focus {
+    color: unset;
+  }
 
   &:hover {
     color: $hover-color;
@@ -65,6 +66,70 @@ header {
 
     & li {
       margin-right: 10px;
+    }
+
+    a {
+      color: #262a2c;
+    }
+  }
+
+  .side-navigation {
+    svg {
+      font-size: 15px;
+    }
+
+    ul {
+      margin: 0;
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+
+      li {
+        margin-right: 15px;
+        display: flex;
+        align-items: center;
+      }
+
+      li:first-child {
+        flex-direction: column;
+
+        a {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+        }
+
+        svg {
+          color: $hover-color;
+          font-size: 17px;
+        }
+      }
+
+      li:last-child {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .cart-total {
+          position: absolute;
+          top: -4px;
+          right: -10px;
+          background: $hover-color;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          -moz-border-radius: 50%;
+          -webkit-border-radius: 50%;
+          color: #fff;
+          text-align: center;
+        }
+
+        svg {
+          font-size: 20px;
+          color: #262a2c;
+        }
+      }
     }
   }
 }
@@ -143,7 +208,8 @@ article.product {
       }
 
       &:visited,
-      &:active {
+      &:active,
+      &:focus {
         color: unset;
       }
     }
@@ -166,6 +232,20 @@ article.product {
       max-height: 449px;
       overflow: hidden;
       transition: opacity 0.4s ease;
+
+      .main-thumbnail {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -webkit-transition: opacity 0.3s ease-in-out;
+      }
+    }
+
+    .product-image-with-hover {
+      cursor: pointer;
+      max-height: 449px;
+      overflow: hidden;
+      transition: opacity 0.4s ease;
       position: relative;
 
       .hover-thumbnail {
@@ -173,13 +253,16 @@ article.product {
         position: absolute;
         top: 0;
         left: 0;
+        transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -webkit-transition: opacity 0.3s ease-in-out;
       }
 
       .main-thumbnail {
         opacity: 1;
-        transition: opacity 0.2s ease-in-out;
-        -moz-transition: opacity 0.2s ease-in-out;
-        -webkit-transition: opacity 0.2s ease-in-out;
+        transition: opacity 0.3s ease-in-out;
+        -moz-transition: opacity 0.3s ease-in-out;
+        -webkit-transition: opacity 0.3s ease-in-out;
       }
     }
 

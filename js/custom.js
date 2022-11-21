@@ -52,6 +52,6 @@ jQuery(function ($) {
         $(this).parent().find("img.main-thumbnail").css("opacity", "1");
       },
     },
-    ".product-thumbnails"
+    ".product-image-with-hover"
   );
 });
