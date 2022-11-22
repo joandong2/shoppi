@@ -23,9 +23,9 @@ function jc_tabbed_products_functions( ) {
     ob_start(); ?>
         <ul id="jc-tabbed-products" class="jc-tabbed-products">
             <li id="featured" class="active">Featured</li>
-			<i class="fa-solid fa-lines-leaning"></i>
+			<span class="dashicons dashicons-controls-pause"></span>
             <li id="top-seller">Top Sellers</li>
-			<i class="fa-solid fa-lines-leaning"></i>
+			<span class="dashicons dashicons-controls-pause"></span>
             <li id="new-arrivals">New Arrivals</li>
         </ul>
 		<div class="loader">

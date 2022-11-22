@@ -227,15 +227,12 @@ add_action( 'widgets_init', 'shoppi_widgets_init' );
  */
 function shoppi_scripts() {
 
-	wp_enqueue_style( 'fa-style', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' );
 	wp_enqueue_style( 'bootstrap-style', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css' );
 	wp_enqueue_style( 'shoppi-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'shoppi-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'bootstrap-js' , 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js', array('jquery'), _S_VERSION, true );
-	wp_enqueue_script( 'fontawesome-js' , 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js', array('jquery'), _S_VERSION, true );
 	wp_enqueue_script( 'shoppi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
 
 	wp_enqueue_script( 'ajax-script', get_template_directory_uri(). '/js/custom.js', array( 'jquery' ), _S_VERSION, true);
 	wp_localize_script( 'ajax-script', 'ajax_object', array( 

@@ -66,14 +66,14 @@
 				<ul>
 					<li>
 						<a href="wishlist">
-							<i class="fa-regular fa-heart"></i>
+						<span class="dashicons dashicons-heart"></span>
 							<span>Wishlist</span>
 						</a>
 					</li>
 					<li>|</li>
 					<li>
 						<a href="cart">
-							<i class="fa-solid fa-cart-shopping"></i>
+							<span class="dashicons dashicons-cart"></span>
 							<span class="cart-total">0</span>
 						</a>
 					</li>

@@ -58,7 +58,7 @@
 		echo '<div class="product-intro">';
 			echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
 			
-			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .'"><i class="fa-solid fa-heart"></i></a>';
+			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .'"><span class="dashicons dashicons-heart"></span></a>';
 
 		echo '</div>';
 		echo wc_price( wc_get_price_including_tax( $product ) );

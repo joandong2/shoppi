@@ -1008,8 +1008,10 @@ header .main-navigation a {
 	color: #262a2c;
 }
 
-header .side-navigation svg {
-	font-size: 15px;
+header .side-navigation .dashicons {
+	font-size: 22px;
+	width: 22px;
+	height: 22px;
 }
 
 header .side-navigation ul {
@@ -1048,8 +1050,8 @@ header .side-navigation ul li:last-child {
 
 header .side-navigation ul li:last-child .cart-total {
 	position: absolute;
-	top: -4px;
-	right: -10px;
+	top: 0;
+	right: -9px;
 	background: #eb5a46;
 	border-radius: 50%;
 	width: 20px;
@@ -1061,8 +1063,9 @@ header .side-navigation ul li:last-child .cart-total {
 	text-align: center;
 }
 
-header .side-navigation ul li:last-child svg {
-	font-size: 20px;
+header .side-navigation ul li:last-child .dashicons {
+	font-size: 26px;
+	width: 26px;
 	color: #262a2c;
 }
 
@@ -1126,8 +1129,8 @@ header .side-navigation ul li:last-child svg {
 	font-size: 16px;
 }
 
-.jc-tabbed-products li.active {
-	color: #000;
+.jc-tabbed-products li:hover, .jc-tabbed-products li.active {
+	color: #eb5a46;
 }
 
 #jc-tabbed-content {
@@ -1176,7 +1179,7 @@ article.product .product-intro p.entry-title {
 	letter-spacing: 0.4px;
 }
 
-article.product .product-intro a.active svg {
+article.product .product-intro a.active .dashicons {
 	color: #eb5a46;
 }
 
@@ -1184,12 +1187,12 @@ article.product .product-intro a:visited, article.product .product-intro a:activ
 	color: unset;
 }
 
-article.product .product-intro svg {
-	font-size: 16px;
+article.product .product-intro .dashicons {
+	font-size: 20px;
 	cursor: pointer;
 }
 
-article.product .product-intro svg:hover {
+article.product .product-intro .dashicons:hover {
 	color: #eb5a46;
 }
 
@@ -1299,8 +1302,10 @@ article.product .product-thumbnails span.out-of-stock {
 	background-size: cover;
 }
 
-.hero-boxes svg {
-	font-size: 48px;
+.hero-boxes .dashicons {
+	font-size: 52px;
+	height: 52px;
+	width: 52px;
 }
 
 .hero-boxes .is-layout-flow {
@@ -1359,7 +1364,7 @@ article.product .product-thumbnails span.out-of-stock {
 	width: 110px;
 }
 
-footer .footer-widgets svg {
+footer .footer-widgets span.dashicons {
 	color: #eb5a46;
 	margin-right: 9px;
 }
@@ -1406,8 +1411,8 @@ footer .footer-widgets p {
 	margin-bottom: 5px;
 }
 
-footer .footer-widgets .footer-widget-5 svg {
-	font-size: 34px;
+footer .footer-widgets .footer-widget-5 .dashicons {
+	font-size: 54px;
 }
 
 footer .site-info {
