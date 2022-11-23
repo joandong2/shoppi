@@ -6,10 +6,9 @@
 get_header();
 ?>
 
-    <main>hello world</main>
+    <main>
+        <div class="container">
     <?php 
-        echo in_array(44, explode( ',', $_COOKIE['wishlist_ids'] ));
-
 
         if ( isset( $_COOKIE['wishlist_ids'] ) ) {
             $args = array(  
@@ -34,5 +33,7 @@ get_header();
             echo '<p>No products in your wishlists..</p>';
         }
     ?>
+        </div>
+    </main>
 <?php
 get_footer();

@@ -545,4 +545,14 @@ p.no-comments {
 	margin-right: 0;
 }
 
+ul.products {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+ul.products li {
+	float: none;
+	width: 33.3333%;
+}
+
 /*# sourceMappingURL=woocommerce.css.map */

@@ -119,6 +119,7 @@ if ( ! function_exists( 'shoppi_woocommerce_wrapper_before' ) ) {
 	function shoppi_woocommerce_wrapper_before() {
 		?>
 			<main id="primary" class="site-main">
+				<div class="container">
 		<?php
 	}
 }
@@ -134,6 +135,8 @@ if ( ! function_exists( 'shoppi_woocommerce_wrapper_after' ) ) {
 	 */
 	function shoppi_woocommerce_wrapper_after() {
 		?>
+				</div>
+				<div style="clear:both;"></div>
 			</main><!-- #main -->
 		<?php
 	}
