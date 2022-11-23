@@ -6,12 +6,17 @@
  *
  * @package shoppi
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php 
 		$product = new WC_Product( get_the_ID() ); 
+		// echo '<pre>';
+		// var_dump($product);
+		// echo '</pre>';
+
 		$active_wishlist = isset($_COOKIE['wishlist_ids']) ? in_array( get_the_id(), explode(',', $_COOKIE['wishlist_ids']) ) : null;
 		$wish_class = $active_wishlist===true ? 'active' : null;
 	?>
@@ -56,8 +61,10 @@
 			echo wc_get_product_tag_list( $product->get_id(), ' ' );
 		echo '</div>';
 		echo '<div class="product-intro">';
-			echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
-			
+			echo '<div style="display:flex">';
+				echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
+				echo '<span>'. jo_starRating($product->average_rating) .'</span>';
+			echo '</div>';
 			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .'"><span class="dashicons dashicons-heart"></span></a>';
 
 		echo '</div>';

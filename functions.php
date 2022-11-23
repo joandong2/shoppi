@@ -292,3 +292,20 @@ if ( class_exists( 'WooCommerce' ) ) {
  * Custom codes
  */
 require get_template_directory() . '/inc/customs.php';
+
+function jo_starRating($val) {
+	echo '<ul class="jo-star-rating">';
+	for( $x = 0; $x < 5; $x++ ) 
+	{
+		if( floor( $val )- $x >= 1 ) { 
+			echo '<li><span class="dashicons dashicons-star-filled"></span></li>'; 
+		}
+		elseif( $val-$x > 0 ) { 
+			echo '<li><span class="dashicons dashicons-star-half"></span></li>'; 
+		}
+		else { 
+			echo '<li><span class="dashicons dashicons-star-empty"></span></li>'; 
+		}
+	}
+	echo '</ul>';
+}

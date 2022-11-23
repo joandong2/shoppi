@@ -179,5 +179,34 @@ function wc_meta_box_save( $post_id ) {
     if( isset( $_POST['hover_image'] ) ){
         update_post_meta( $post_id, 'hover_image', $_POST['hover_image'] );
     }
-}?>
+}
+
+function jc_blog_posts( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'num' => 4,
+		), $atts );
+
+    $loop = new WP_Query( array(
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => $atts["num"], 
+	));
+
+    ob_start(); ?>
+		<div id="jc-blog-posts">
+			<?php
+			if($loop->have_posts()) :
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+					get_template_part( 'template-parts/content', get_post_type() );
+				endwhile; 
+			endif;
+			?>
+		</div>
+
+	<?php wp_reset_postdata();
+	$output = ob_get_clean();
+	return $output;
+}
+add_shortcode( 'jc-blog-posts', 'jc_blog_posts' );
 
