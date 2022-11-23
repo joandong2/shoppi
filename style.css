@@ -60,7 +60,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Lobster&family=Montserrat:wght@300;400;700&display=swap");
 html {
 	line-height: 1.15;
 	-webkit-text-size-adjust: 100%;
@@ -1307,6 +1307,26 @@ article.product .jo-star-rating .dashicons-star-filled {
 
 #jc-blog-posts article {
 	width: 31.3333%;
+}
+
+#jc-blog-posts article h2.entry-title {
+	display: block;
+	font-family: "Alegreya", serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 28px;
+	margin-top: 10px;
+}
+
+#jc-blog-posts article .entry-meta {
+	color: #afafaf;
+	margin-top: 15px;
+	font-size: 13px;
+	font-style: italic;
+}
+
+#jc-blog-posts article .entry-meta a {
+	color: #eb5a46;
 }
 
 .loader {

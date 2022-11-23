@@ -198,7 +198,7 @@ function jc_blog_posts( $atts ) {
 			<?php
 			if($loop->have_posts()) :
 				while ( $loop->have_posts() ) : $loop->the_post(); 
-					get_template_part( 'template-parts/content', get_post_type() );
+					get_template_part( 'template-parts/content-blog', get_post_type() );
 				endwhile; 
 			endif;
 			?>
