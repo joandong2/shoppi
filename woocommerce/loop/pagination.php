@@ -32,8 +32,8 @@ if ( $total <= 1 ) {
 
 <div class="loader">
 	<div class="ripple"></div>
+	<button id="load-more" data-total="<?php echo $total; ?>">Load More</button>
 </div>
-<button id="load-more" data-total="<?php echo $total; ?>">Load More</button>
 
 <!-- <nav class="woocommerce-pagination">
 	<?php

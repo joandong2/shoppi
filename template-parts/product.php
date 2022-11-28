@@ -65,12 +65,10 @@
 				echo '<p data-id="'. get_the_ID() .'" class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $product->get_name() .'</a></p>';
 				echo '<span>'. jo_starRating($product->average_rating) .'</span>';
 			echo '</div>';
-			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .'"><span class="dashicons dashicons-heart"></span></a>';
+			echo '<a id="'.get_the_ID().'" href="#" class="'. $wish_class .' jo-wishlist-icon"><span class="dashicons dashicons-heart"></span></a>';
 
 		echo '</div>';
 		echo wc_price( wc_get_price_including_tax( $product ) );
-		
-		
 	?>
 
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -22,7 +22,7 @@ jQuery(function ($) {
     return false;
   };
 
-  $("body").on("click", ".product-intro a", function (e) {
+  $("body").on("click", ".jo-wishlist-icon", function (e) {
     e.preventDefault();
     wish_id = $(this).attr("id");
     (data = {
@@ -90,12 +90,13 @@ jQuery(function ($) {
         if (res !== "") {
           setTimeout(function () {
             $(".ripple").css("display", "none");
-            $("ul.products").append(res);
           }, 500);
-        }
 
-        if (parseInt(max_page) === curr_page) {
-          $("#load-more").css("display", "none");
+          $("ul.products").append(res);
+
+          if (parseInt(max_page) === curr_page) {
+            $("#load-more").css("display", "none");
+          }
         }
       });
   });

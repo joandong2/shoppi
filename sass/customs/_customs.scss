@@ -2,6 +2,7 @@
 
 $hover-color: #eb5a46;
 $gray: #262a2c;
+$light-gray: #979797;
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -221,11 +222,16 @@ header {
   gap: 1%;
   align-items: center;
 
+  span {
+    color: $light-gray;
+  }
+
   li {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 16px;
+    color: $light-gray;
 
     &:hover,
     &.active {
@@ -245,7 +251,8 @@ header {
   }
 }
 
-article.product {
+article.product,
+li.product {
   margin-bottom: 15px;
 
   .woocommerce-Price-amount {
@@ -269,17 +276,16 @@ article.product {
     justify-content: space-between;
 
     p.entry-title {
-      color: #fff;
-      background: black;
-      padding: 2px 10px;
-      font-size: 14px;
-      line-height: 18px;
+      color: #000;
+      font-family: "Alegreya", serif;
+      font-size: 22px;
+      line-height: 22px;
       font-weight: 500;
       font-style: normal;
       letter-spacing: 0.4px;
 
       a {
-        color: #fff;
+        color: #000;
       }
     }
 
