@@ -210,3 +210,42 @@ function jc_blog_posts( $atts ) {
 }
 add_shortcode( 'jc-blog-posts', 'jc_blog_posts' );
 
+function jc_load_more() {
+
+	//check_ajax_referer( 'jo_nonce', 'nonce' );  // This function will die if nonce is not correct.
+	$paged = sanitize_text_field($_POST['paged']);
+	$orderBy = sanitize_text_field($_POST['orderBy']);
+	
+	// } else {
+		// $args = array(  
+		// 	'post_type' => 'post',
+		// 	'category__in' => $curr_id ? $curr_id : null,
+		// 	'posts_per_page' => get_option('posts_per_page'),
+		// 	'orderby' => 'date',
+		// 	'order' => 'DESC',
+		// 	'paged' => $paged,
+		// );
+	//}
+
+	$args = array(  
+		'post_type' => 'product',
+		//'category__in' => $curr_id ? $curr_id : null,
+		'posts_per_page' => get_option('posts_per_page'),
+		'orderby' => $orderBy ? $orderBy : 'date',
+		'order' => 'DESC',
+		'paged' => $paged,
+	);
+
+	$loop = new WP_Query( $args ); 
+
+	if($loop->have_posts()) :
+		while ( $loop->have_posts() ) : $loop->the_post(); 
+			wc_get_template_part( 'content', 'product' );
+		endwhile; 
+	endif; 
+
+	wp_die();
+  }
+  add_action('wp_ajax_jc_load_more', 'jc_load_more');
+  add_action('wp_ajax_nopriv_jc_load_more', 'jc_load_more');
+
