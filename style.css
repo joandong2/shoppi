@@ -1383,17 +1383,23 @@ li.product .jo-star-rating .dashicons-star-filled {
 	color: #eb5a46;
 }
 
-.main-content-container {
+.home .side,
+.page .side {
+	display: none;
+}
+
+.flex-container {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 2%;
 	justify-content: space-between;
 }
 
-.main-content-container .main-content {
-	width: 65%;
+.flex-container .main-content {
+	width: 100%;
 }
 
-.main-content-container .side h4 {
+.flex-container .side h4 {
 	margin: 10px 0 25px 10px;
 	position: relative;
 	font-size: 16px;
@@ -1403,7 +1409,7 @@ li.product .jo-star-rating .dashicons-star-filled {
 	font-family: "Alegreya", serif;
 }
 
-.main-content-container .side h4:after {
+.flex-container .side h4:after {
 	position: absolute;
 	bottom: -10px;
 	left: 10px;
@@ -1413,8 +1419,44 @@ li.product .jo-star-rating .dashicons-star-filled {
 	background-color: #eb5a46;
 }
 
-.main-content-container .side #wpforms-141 #wpforms-form-141 .wpforms-submit-container {
-	margin-top: -10.3%;
+.flex-container .side #wpforms-141 #wpforms-form-141 .wpforms-submit-container {
+	margin-top: -15.7%;
+}
+
+.flex-container .side .wp-block-social-links li {
+	margin-right: 0px;
+}
+
+.blog .main-content {
+	width: 68%;
+}
+
+.blog .side {
+	width: 30%;
+}
+
+.blog h2.entry-title {
+	display: block;
+	font-family: "Alegreya", serif;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 28px;
+	margin-top: 10px;
+}
+
+.blog .post-thumbnail img {
+	margin-bottom: 25px;
+}
+
+.blog .entry-meta {
+	color: #afafaf;
+	margin-top: 15px;
+	font-size: 13px;
+	font-style: italic;
+}
+
+.blog .entry-meta a {
+	color: #eb5a46;
 }
 
 #jc-blog-posts {

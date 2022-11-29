@@ -17,26 +17,9 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="container">
-			<div class="main-content-container">
+			<div class="flex-container">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				<div class="main-content">
-				<header class="entry-header">
-					<?php
-					if ( is_singular() ) :
-						the_title( '<h1 class="entry-title">', '</h1>' );
-					else :
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					endif;
-
-					if ( 'post' === get_post_type() ) :
-						?>
-						<div class="entry-meta">
-							<?php
-							shoppi_posted_on();
-							shoppi_posted_by();
-							?>
-						</div><!-- .entry-meta -->
-					<?php endif; ?>
-				</header>
 					<?php
 					while ( have_posts() ) :
 						the_post();

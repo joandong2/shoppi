@@ -439,13 +439,19 @@ li.product {
   }
 }
 
-.main-content-container {
+.home .side,
+.page .side {
+  display: none;
+}
+
+.flex-container {
   display: flex;
+  flex-wrap: wrap;
   gap: 2%;
   justify-content: space-between;
 
   .main-content {
-    width: 65%;
+    width: 100%;
   }
 
   .side {
@@ -470,7 +476,45 @@ li.product {
     }
 
     #wpforms-141 #wpforms-form-141 .wpforms-submit-container {
-      margin-top: -10.3%;
+      margin-top: -15.7%;
+    }
+
+    .wp-block-social-links li {
+      margin-right: 0px;
+    }
+  }
+}
+
+.blog {
+  .main-content {
+    width: 68%;
+  }
+
+  .side {
+    width: 30%;
+  }
+
+  h2.entry-title {
+    display: block;
+    font-family: "Alegreya", serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 10px;
+  }
+
+  .post-thumbnail img {
+    margin-bottom: 25px;
+  }
+
+  .entry-meta {
+    color: #afafaf;
+    margin-top: 15px;
+    font-size: 13px;
+    font-style: italic;
+
+    a {
+      color: $hover-color;
     }
   }
 }

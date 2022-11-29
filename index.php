@@ -17,36 +17,17 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="container">
-			<div class="main-content-container">
-				<div class="main-content">
-				<header class="entry-header">
+			<?php 
+				if ( is_home() && ! is_front_page() ) :
+					?>
+						<h1 class="page-title"><?php single_post_title(); ?></h1>
 					<?php
-					if ( is_singular() ) :
-						the_title( '<h1 class="entry-title">', '</h1>' );
-					else :
-						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					endif;
-
-					if ( 'post' === get_post_type() ) :
-						?>
-						<div class="entry-meta">
-							<?php
-							shoppi_posted_on();
-							shoppi_posted_by();
-							?>
-						</div><!-- .entry-meta -->
-					<?php endif; ?>
-				</header>
+				endif;
+			?>
+			<div class="flex-container">
+				<div class="main-content">
 				<?php
 					if ( have_posts() ) :
-
-						if ( is_home() && ! is_front_page() ) :
-							?>
-							<header>
-								<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-							</header>
-							<?php
-						endif;
 
 						/* Start the Loop */
 						while ( have_posts() ) :
