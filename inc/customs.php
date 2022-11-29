@@ -215,21 +215,11 @@ function jc_load_more() {
 	//check_ajax_referer( 'jo_nonce', 'nonce' );  // This function will die if nonce is not correct.
 	$paged = sanitize_text_field($_POST['paged']);
 	$orderBy = sanitize_text_field($_POST['orderBy']);
-	
-	// } else {
-		// $args = array(  
-		// 	'post_type' => 'post',
-		// 	'category__in' => $curr_id ? $curr_id : null,
-		// 	'posts_per_page' => get_option('posts_per_page'),
-		// 	'orderby' => 'date',
-		// 	'order' => 'DESC',
-		// 	'paged' => $paged,
-		// );
-	//}
+	$catName = sanitize_text_field($_POST['cat_name']);
 
 	$args = array(  
 		'post_type' => 'product',
-		//'category__in' => $curr_id ? $curr_id : null,
+		'product_cat' => $catName ? $catName : null,
 		'posts_per_page' => get_option('posts_per_page'),
 		'orderby' => $orderBy ? $orderBy : 'date',
 		'order' => 'DESC',

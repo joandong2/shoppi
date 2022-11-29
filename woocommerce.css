@@ -545,6 +545,18 @@ p.no-comments {
 	margin-right: 0;
 }
 
+.woocommerce-info {
+	background-color: #eb5a46;
+	padding: 10px;
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.woocommerce-breadcrumb {
+	margin-top: 30px;
+}
+
 .archive .loader {
 	margin-bottom: 20px;
 	flex-direction: column;

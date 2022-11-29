@@ -27,11 +27,20 @@
 
 	<header id="masthead" class="site-header">
 		<div class="header-top">
-			<div class="container">
-				
+			<div class="container header-top-container">
+				<div>
+					<ul>
+						<li><span class="dashicons dashicons-money"></span> Online Customer Support</li>
+						<li><span class="dashicons dashicons-phone"></span> +1 908 635 2191</li>
+						<li><span class="dashicons dashicons-admin-users"></span> Login/Signup</li>
+					</ul>
+				</div>
+				<div>
+
+				</div>
 			</div>
 		</div>
-		<div class="header container">
+		<div class="header-main container">
 			<div class="site-branding">
 				<?php
 				the_custom_logo();
@@ -65,7 +74,7 @@
 			<div class="side-navigation">
 				<ul>
 					<li>
-						<a href="wishlist">
+						<a href="<?php echo site_url ();?>/wishlist">
 						<span class="dashicons dashicons-heart"></span>
 							<span>Wishlist</span>
 						</a>

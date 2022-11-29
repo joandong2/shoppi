@@ -30,20 +30,63 @@ a {
   }
 }
 
-h1.entry-title,
-h1.woocommerce-products-header__title {
+.home h1.entry-title {
   display: none;
 }
 
-header {
+.page-title,
+h1.entry-title {
+  margin: 10px 0 25px 10px;
+  position: relative;
+  font-size: 38px;
+  line-height: 42px;
+  color: #262a2c;
+  font-family: "Alegreya", serif;
+
+  &:after {
+    position: absolute;
+    bottom: -10px;
+    left: 10px;
+    height: 3px;
+    content: "";
+    width: 76px;
+    background-color: $hover-color;
+  }
+}
+
+header.site-header {
   position: sticky;
   top: 0;
   z-index: 10;
   background-color: #fff;
+  border-bottom: 1px solid #ececec;
 
   .header-top {
     color: #fff;
-    padding: 5px 0;
+    padding: 8px 0;
+    background: #000;
+
+    .header-top-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .dashicons {
+        color: $hover-color;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          display: inline-block;
+          margin-right: 15px;
+          font-size: 13px;
+        }
+      }
+    }
   }
 
   .site-title a {
@@ -240,7 +283,12 @@ header {
   }
 }
 
-#jc-tabbed-content {
+.product-loop {
+  margin-top: 30px;
+}
+
+#jc-tabbed-content,
+.product-loop {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;

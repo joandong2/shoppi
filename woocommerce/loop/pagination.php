@@ -23,6 +23,8 @@ $total   = isset( $total ) ? $total : wc_get_loop_prop( 'total_pages' );
 $current = isset( $current ) ? $current : wc_get_loop_prop( 'current_page' );
 $base    = isset( $base ) ? $base : esc_url_raw( str_replace( 999999999, '%#%', remove_query_arg( 'add-to-cart', get_pagenum_link( 999999999, false ) ) ) );
 $format  = isset( $format ) ? $format : '';
+$current_category_object = get_queried_object();
+$cat_name = is_product_category() ? $current_category_object->name : null;
 
 if ( $total <= 1 ) {
 	return;
@@ -32,7 +34,7 @@ if ( $total <= 1 ) {
 
 <div class="loader">
 	<div class="ripple"></div>
-	<button id="load-more" data-total="<?php echo $total; ?>">Load More</button>
+	<button id="load-more" data-category="<?php echo $cat_name; ?>" data-total="<?php echo $total; ?>">Load More</button>
 </div>
 
 <!-- <nav class="woocommerce-pagination">

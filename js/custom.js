@@ -78,13 +78,15 @@ jQuery(function ($) {
 
   $("body").on("click", "#load-more", function () {
     var orderBy = getUrlParameter("orderby");
+    var cat_name = $(this).attr("data-category");
     max_page = $(this).attr("data-total");
     curr_page++;
     $(".ripple").css("display", "block");
     (data = {
-      action: "jc_load_more", // execute the function
+      action: "jc_load_more",
       paged: curr_page,
       orderBy: orderBy,
+      cat_name: cat_name,
     }),
       $.post(ajax_object.jo_ajaxurl, data, function (res) {
         if (res !== "") {
