@@ -60,6 +60,7 @@ header.site-header {
   z-index: 10;
   background-color: #fff;
   border-bottom: 1px solid #ececec;
+  margin-bottom: 30px;
 
   .header-top {
     color: #fff;
@@ -199,6 +200,10 @@ header.site-header {
       }
     }
   }
+}
+
+.home header.site-header {
+  margin-bottom: 0;
 }
 
 // .slider {
@@ -430,6 +435,42 @@ li.product {
 
     .dashicons-star-filled {
       color: #eb5a46;
+    }
+  }
+}
+
+.main-content-container {
+  display: flex;
+  gap: 2%;
+  justify-content: space-between;
+
+  .main-content {
+    width: 65%;
+  }
+
+  .side {
+    h4 {
+      margin: 10px 0 25px 10px;
+      position: relative;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #262a2c;
+      font-family: "Alegreya", serif;
+
+      &:after {
+        position: absolute;
+        bottom: -10px;
+        left: 10px;
+        height: 3px;
+        content: "";
+        width: 76px;
+        background-color: $hover-color;
+      }
+    }
+
+    #wpforms-141 #wpforms-form-141 .wpforms-submit-container {
+      margin-top: -10.3%;
     }
   }
 }
