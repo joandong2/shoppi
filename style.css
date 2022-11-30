@@ -967,34 +967,12 @@ a:hover {
 	display: none;
 }
 
-.page-title,
-h1.entry-title {
-	margin: 10px 0 25px 10px;
-	position: relative;
-	font-size: 38px;
-	line-height: 42px;
-	color: #262a2c;
-	font-family: "Alegreya", serif;
-}
-
-.page-title:after,
-h1.entry-title:after {
-	position: absolute;
-	bottom: -10px;
-	left: 10px;
-	height: 3px;
-	content: "";
-	width: 76px;
-	background-color: #eb5a46;
-}
-
 header.site-header {
 	position: sticky;
 	top: 0;
 	z-index: 10;
 	background-color: #fff;
 	border-bottom: 1px solid #ececec;
-	margin-bottom: 30px;
 }
 
 header.site-header .header-top {
@@ -1130,6 +1108,59 @@ header.site-header .side-navigation ul li:last-child .dashicons {
 	font-size: 26px;
 	width: 26px;
 	color: #262a2c;
+}
+
+.page-title,
+h1.entry-title {
+	margin: 10px 0 25px 10px;
+	position: relative;
+	font-size: 38px;
+	line-height: 42px;
+	color: #262a2c;
+	font-family: "Alegreya", serif;
+}
+
+.page-title:after,
+h1.entry-title:after {
+	position: absolute;
+	bottom: -10px;
+	left: 10px;
+	height: 3px;
+	content: "";
+	width: 76px;
+	background-color: #eb5a46;
+}
+
+.entry-title-container {
+	background-color: #282b2d;
+	color: #fff;
+	padding: 40px 0;
+}
+
+.entry-title-container .flex-container {
+	align-items: center;
+	justify-content: center;
+}
+
+.entry-title-container .page-title,
+.entry-title-container h1.entry-title {
+	margin: 10px 0 25px 10px;
+	position: relative;
+	font-size: 48px;
+	line-height: 52px;
+	color: #fff;
+	font-family: "Alegreya", serif;
+}
+
+.entry-title-container .page-title:after,
+.entry-title-container h1.entry-title:after {
+	position: absolute;
+	bottom: -10px;
+	left: 10px;
+	height: 3px;
+	content: "";
+	width: 76px;
+	background-color: #eb5a46;
 }
 
 .home header.site-header {
@@ -1691,6 +1722,38 @@ footer .site-info {
 		max-width: 100vw;
 		margin-left: calc(50% - 50vw);
 	}
+}
+
+div.wpforms-container-full {
+	margin: 0;
+}
+
+.contact-hero .dashicons {
+	background-color: #eb5a46;
+	color: #fff;
+	/* padding: 10px; */
+	border-radius: 50%;
+	width: 46px;
+	height: 46px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-hero p {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 22px;
+	letter-spacing: 1px;
+	text-transform: none;
+	color: #444444;
+}
+
+.contact-hero .first {
+	color: #8b99a3;
+	font-size: 14px;
+	text-transform: uppercase;
+	margin-top: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

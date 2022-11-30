@@ -16,9 +16,13 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-		<div class="container">
+		<div class="entry-title-container">
 			<div class="flex-container">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</div>
+		</div>
+		<div class="container">
+			<div class="flex-container">
 				<div class="main-content">
 					<?php
 					while ( have_posts() ) :
