@@ -48,8 +48,20 @@ $gray: #262a2c;
   margin-right: 0;
 }
 
-.woocommerce-info {
+.woocommerce-info,
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-noreviews,
+p.no-comments {
   background-color: $hover-color;
+  padding: 10px;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.woocommerce-error {
+  background-color: red;
   padding: 10px;
   color: white;
   margin-top: 20px;
@@ -150,5 +162,68 @@ $gray: #262a2c;
   .price,
   .add_to_cart_button {
     display: none;
+  }
+}
+
+.single-product {
+  .flex-container {
+    justify-content: flex-start;
+    gap: 4%;
+  }
+
+  .product {
+    .summary {
+      width: 55%;
+    }
+
+    .onsale {
+      // background: $hover-color;
+      // color: white;
+      // padding: 2px 12px;
+      // position: absolute;
+      // top: 3%;
+      // left: 3%;
+      // display: inline-block;
+      display: none;
+    }
+
+    .cart {
+      display: flex;
+      gap: 2%;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .woocommerce-Price-amount {
+      font-weight: bold;
+      color: $hover-color;
+    }
+
+    button {
+      background-color: $hover-color;
+      color: #fff;
+      line-height: 18px;
+      background-color: #eb5a46;
+      color: #fff;
+      font-size: 14px;
+      border: none;
+    }
+
+    .tabs {
+      display: flex;
+      margin-bottom: 40px;
+      margin-top: 20px;
+
+      li {
+        background-color: $hover-color;
+        padding: 2px 5px;
+        margin-right: 1px;
+
+        a {
+          color: white;
+          padding: 0;
+        }
+      }
+    }
   }
 }

@@ -81,9 +81,9 @@
 					</li>
 					<li>|</li>
 					<li>
-						<a href="cart">
+						<a href="<?php echo site_url ();?>/cart">
 							<span class="dashicons dashicons-cart"></span>
-							<span class="cart-total">0</span>
+							<span class="cart-total"><?php echo (isset($_COOKIE['woocommerce_items_in_cart']) ? $_COOKIE['woocommerce_items_in_cart']  : 0) ?></span>
 						</a>
 					</li>
 				</ul>

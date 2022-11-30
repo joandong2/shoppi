@@ -1360,8 +1360,7 @@ li.product .product-thumbnails span.sale,
 li.product .product-thumbnails span.out-of-stock {
 	background: #eb5a46;
 	color: white;
-	padding: 5px 12px;
-	font-weight: bold;
+	padding: 2px 12px;
 }
 
 article.product .jo-star-rating,
