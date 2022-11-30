@@ -492,19 +492,21 @@ li.product {
 
   .side {
     width: 30%;
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 
   h2.entry-title {
     display: block;
     font-family: "Alegreya", serif;
-    font-size: 20px;
+    font-size: 32px;
     font-weight: 400;
-    line-height: 28px;
+    line-height: 34px;
     margin-top: 10px;
-  }
-
-  .post-thumbnail img {
-    margin-bottom: 25px;
   }
 
   .entry-meta {
@@ -515,6 +517,32 @@ li.product {
 
     a {
       color: $hover-color;
+    }
+  }
+
+  .nav-links a {
+    background: $hover-color;
+    color: white;
+    padding: 5px 12px;
+    font-weight: bold;
+  }
+
+  .cat-links a,
+  .tags-links a {
+    background: #eb5a46;
+    color: white;
+    padding: 1px 5px;
+    font-size: 12px;
+  }
+
+  .comments-link {
+    display: block;
+
+    a {
+      background: #eb5a46;
+      color: white;
+      padding: 1px 5px;
+      font-size: 12px;
     }
   }
 }

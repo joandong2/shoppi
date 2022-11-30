@@ -619,4 +619,33 @@ p.no-comments {
 	display: none;
 }
 
+.related {
+	margin-top: 30px;
+}
+
+.related h2 {
+	margin: 10px 0 25px 10px;
+	position: relative;
+	font-size: 28px;
+	line-height: 32px;
+	color: #262a2c;
+	font-family: "Alegreya", serif;
+}
+
+.related h2:after {
+	position: absolute;
+	bottom: -10px;
+	left: 10px;
+	height: 3px;
+	content: "";
+	width: 76px;
+	background-color: #eb5a46;
+}
+
+.related .onsale,
+.related .price,
+.related .add_to_cart_button {
+	display: none;
+}
+
 /*# sourceMappingURL=woocommerce.css.map */

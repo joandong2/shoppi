@@ -123,3 +123,32 @@ $gray: #262a2c;
     }
   }
 }
+
+.related {
+  margin-top: 30px;
+
+  h2 {
+    margin: 10px 0 25px 10px;
+    position: relative;
+    font-size: 28px;
+    line-height: 32px;
+    color: #262a2c;
+    font-family: "Alegreya", serif;
+
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      left: 10px;
+      height: 3px;
+      content: "";
+      width: 76px;
+      background-color: $hover-color;
+    }
+  }
+
+  .onsale,
+  .price,
+  .add_to_cart_button {
+    display: none;
+  }
+}

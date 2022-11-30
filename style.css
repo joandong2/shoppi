@@ -1435,17 +1435,19 @@ li.product .jo-star-rating .dashicons-star-filled {
 	width: 30%;
 }
 
+.blog .side ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
 .blog h2.entry-title {
 	display: block;
 	font-family: "Alegreya", serif;
-	font-size: 20px;
+	font-size: 32px;
 	font-weight: 400;
-	line-height: 28px;
+	line-height: 34px;
 	margin-top: 10px;
-}
-
-.blog .post-thumbnail img {
-	margin-bottom: 25px;
 }
 
 .blog .entry-meta {
@@ -1457,6 +1459,32 @@ li.product .jo-star-rating .dashicons-star-filled {
 
 .blog .entry-meta a {
 	color: #eb5a46;
+}
+
+.blog .nav-links a {
+	background: #eb5a46;
+	color: white;
+	padding: 5px 12px;
+	font-weight: bold;
+}
+
+.blog .cat-links a,
+.blog .tags-links a {
+	background: #eb5a46;
+	color: white;
+	padding: 1px 5px;
+	font-size: 12px;
+}
+
+.blog .comments-link {
+	display: block;
+}
+
+.blog .comments-link a {
+	background: #eb5a46;
+	color: white;
+	padding: 1px 5px;
+	font-size: 12px;
 }
 
 #jc-blog-posts {
